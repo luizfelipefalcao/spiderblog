@@ -1,4 +1,4 @@
-This aewsome and easy blog has developed by using awesome tecnologies, such:
+This easy blog has developed by using awesome tecnologies, such:
 
 - ReactJS
 - Firebase
