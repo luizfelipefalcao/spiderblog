@@ -40,7 +40,7 @@ class Register extends Component{
   render(){
     return(
       <div>
-          <h1 className="register-h1">New Account</h1>
+        <h1 className="register-h1">New Account</h1>
         <form onSubmit={this.register} id="register">
           <label>Name:</label><br/>
           <input type="text" value={this.state.nome} autoFocus autoComplete="off"

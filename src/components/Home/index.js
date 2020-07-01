@@ -1,39 +1,49 @@
-import React, {Component} from 'react';
-import firebase from '../../firebase';
-import './home.css'
+import React, { Component } from "react";
+import firebase from "../../firebase";
+import "./home.css";
 
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+      nome: ''
+    };
+  }
 
-class Home extends Component{
-
-  state = {
-    posts: []
-  };
-
-  componentDidMount(){
-    firebase.app.ref('posts').once('value', (snapshot)=> {
+  componentDidMount() {   
+    firebase.app.ref("posts").on("value", (snapshot) => {
       let state = this.state;
       state.posts = [];
 
-      snapshot.forEach((childItem)=>{
+      snapshot.forEach((childItem) => {
         state.posts.push({
           key: childItem.key,
           titulo: childItem.val().titulo,
           image: childItem.val().image,
           descricao: childItem.val().descricao,
           autor: childItem.val().autor,
-        })
+        });
       });
       state.posts.reverse();
       this.setState(state);
-
-    })
+    });
+// console.log('local: '+localStorage.nome);
+//     firebase.getUserName((info) => {
+//       //Se tiver logado pegue o usuario do firebase.
+//       localStorage.nome = info.val().nome;
+//       let state = this.state;
+//       state.nome = localStorage.nome;
+//       this.setState(state);
+// console.log("1 nome: " + this.state.nome);
+//     });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <section id="post">
-        {this.state.posts.map((post)=>{
-          return(
+        {this.state.posts.map((post) => {
+          return (
             <article key={post.key}>
               <header>
                 <div className="title">

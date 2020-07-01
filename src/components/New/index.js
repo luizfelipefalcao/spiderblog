@@ -45,7 +45,7 @@ class New extends Component{
         autor: localStorage.nome
       });
 
-      this.props.history.push('/dashboard');
+      this.props.history.push('/');
     }else{
       this.setState({alert: 'Preencha todos os campos!'});
     }
