@@ -30,12 +30,12 @@ class Register extends Component{
       const {nome, email, password} = this.state;
 
       await firebase.register(nome, email, password);
-      window.location.reload();
-      this.props.history.replace('/');
 
     }catch(error){
       alert(error.message);
     }
+    this.props.history.replace('/');
+    window.location.reload();
   }
 
   render(){
