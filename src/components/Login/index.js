@@ -44,6 +44,7 @@ class Login extends Component {
         }
       });
 
+      this.props.history.push('/');
       window.location.reload();
     } catch (error) {
       alert(error.message);
