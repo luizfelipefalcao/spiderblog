@@ -30,7 +30,7 @@ header#main-header .header-content img {
   height: 50px;
 }
 
-header#main-header .header-content .login {
+header#main-header .header-content .cst-text, .cst-newpost {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.3rem;
@@ -38,17 +38,47 @@ header#main-header .header-content .login {
   padding: 5px 10px;
 }
 
+header#main-header .header-content .cst-text {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+header#main-header .header-content .cst-signup {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+header#main-header .header-content .cst-signup:hover {
+  color: rgb(214, 4, 4);
+  border: 1px solid rgb(214, 4, 4);
+  transition: 1s;
+  text-decoration: none;
+}
+  
 header#main-header .header-content a:hover {
   color: rgb(214, 4, 4);
   transition: 1s;
+  text-decoration: none;
 }
 
-@media only screen and (max-width: 679px) {
+@media only screen and (max-width: 639px) {
 
   section .background-foto img {
     width: 100%;
     height: 150px;
     position: relative;
+  }
+
+  header#main-header .header-content{
+    padding: 0 12px;
+    padding-left: 20px;
   }
 
   header#main-header .header-content img {
@@ -57,7 +87,26 @@ header#main-header .header-content a:hover {
     height: 40px;
   }
 
-  header#main-header .header-content a {
+  header#main-header .header-content .cst-text {
     font-size: 0;
-  }
+  }  
+  
+  header#main-header .header-content .cst-newpost {
+    font-size: 1.2rem;
+    }
+
+    header#main-header .header-content .cst-newpost:hover {
+      text-decoration: none;
+    }
+
+    .cst-logout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    header#main-header .header-content .cst-signup {
+      font-size: 1rem;
+    }
 }

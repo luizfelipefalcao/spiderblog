@@ -58,13 +58,14 @@ class Header extends Component {
             <div>
               {this.state.nome === ''
               ?
-              <div>
-                <Link to="/login" className='login'>Login<BsPerson size={33}/></Link>
+              <div className='cst-logout'>
+                <Link to="/login" className='cst-text'>Login<BsPerson size={33}/></Link>
+                <Link to="/register" className='cst-signup'>Sign Up</Link>
               </div>
               :
-              <div>
-                <Link to="/dashboard" className='login'>New Post</Link>
-                <Link to="/" className='login' onClick={this.sair}>Logout <BsBoxArrowRight size={30}/></Link>
+              <div className='cst-logout'>
+                <Link to="/dashboard" className='cst-newpost'>New Post</Link>
+                <Link to="/" className='cst-text' onClick={this.sair}>Logout <BsBoxArrowRight size={30}/></Link>
               </div>
               }
             </div>
