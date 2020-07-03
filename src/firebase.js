@@ -23,43 +23,52 @@ class Firebase {
     this.storage = app.storage();
   }
 
+  //Metodo para fazer o login no Firebase, usando dois parametros que vai vir do usuario
   login(email, password) {
     return app.auth().signInWithEmailAndPassword(email, password);
   }
 
+  //Metodo padrao para logout da autenticacao do Firebase
   logout() {
     return app.auth().signOut();
   }
 
+  //Metodo para registrar novo usuario com esses parametros, agindo na autenticacao do Firebase
   async register(nome, email, password) {
     await app.auth().createUserWithEmailAndPassword(email, password);
 
+    //autentica pegando o uid do usuario criado
     const uid = app.auth().currentUser.uid;
 
+    //retorna um novo parametro 'nome' no database do Firebase atraves da autenticacao
     return app.database().ref("users").child(uid).set({
       nome: nome,
     });
   }
 
+  //Verifica se foi inicializado, usando a Promisse com o parametro 'resolve'
   isInitialized() {
     return new Promise((resolve) => {
       app.auth().onAuthStateChanged(resolve);
     });
   }
 
+  //Retorna usuario atual e email atual
   getCurrent() {
     return app.auth().currentUser && app.auth().currentUser.email;
   }
 
+  //Retorna usuario atual e uid atual
   getCurrentUid() {
     return app.auth().currentUser && app.auth().currentUser.uid;
   }
 
   async getUserName(callback) {
-    if (!app.auth().currentUser) {
+    if (!app.auth().currentUser) { //Se nao existe usuario logado retorne null
       return null;
     }
 
+    //senao pegue da tabela 'users' o nome do usuario atual
     const uid = app.auth().currentUser.uid;
     await app.database().ref("users").child(uid).once("value").then(callback);
   }

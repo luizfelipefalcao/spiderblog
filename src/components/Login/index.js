@@ -18,7 +18,7 @@ class Login extends Component {
 
 
   componentDidMount() {
-    //Se tem usuario logado
+    //Se tem usuario logado, direcione para '/'
     if (firebase.getCurrent()) { 
       return this.props.history.push("/");
     }
@@ -34,7 +34,7 @@ class Login extends Component {
   login = async () => {
     const { email, password } = this.state;
 
-    try {
+    try { //Trata o login conforme o que digitado pelo usuario
       await firebase.login(email, password).catch((error) => {
         if (error.code === "auth/user-not-found") {
           alert("Este usuario não existe!");
@@ -44,11 +44,12 @@ class Login extends Component {
         }
       });
 
-      this.props.history.push('/');
-      window.location.reload();
+
     } catch (error) {
       alert(error.message);
     }
+
+    window.location.reload();
   };
 
   render() {
@@ -84,5 +85,4 @@ class Login extends Component {
     );
   }
 }
-// onClick={()=>this.setState({nome: this.email})}
 export default withRouter(Login);

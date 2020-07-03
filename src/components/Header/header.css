@@ -99,7 +99,7 @@ header#main-header .header-content a:hover {
       text-decoration: none;
     }
 
-    .cst-logout {
+    .cst-menu {
       display: flex;
       align-items: center;
       justify-content: center;

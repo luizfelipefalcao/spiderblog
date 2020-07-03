@@ -25,7 +25,7 @@ class Header extends Component {
       this.props.history.replace("/");
       return null;
     }
-    firebase.getUserName((info) => { //Se tiver logado pegue o usuario do firebase.
+    firebase.getUserName((info) => { //Se tiver logado pegue o usuario do firebase, usando a callback
       localStorage.nome = info.val().nome;
       this.setState({ nome: localStorage.nome });
     });
@@ -58,14 +58,14 @@ class Header extends Component {
             <div>
               {this.state.nome === ''
               ?
-              <div className='cst-logout'>
+              <div className='cst-menu'>
                 <Link to="/login" className='cst-text'>Login<BsPerson size={33}/></Link>
                 <Link to="/register" className='cst-signup'>Sign Up</Link>
               </div>
               :
-              <div className='cst-logout'>
+              <div className='cst-menu'>
                 <Link to="/dashboard" className='cst-newpost'>New Post</Link>
-                <Link to="/" className='cst-text' onClick={this.sair}>Logout <BsBoxArrowRight size={30}/></Link>
+                <Link to="/" className='cst-text' onClick={this.sair}>Logout<BsBoxArrowRight size={30}/></Link>
               </div>
               }
             </div>

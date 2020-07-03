@@ -74,11 +74,11 @@ class New extends Component{
     const { imagem } = this.state;
     const currentUid = firebase.getCurrentUid();
 
-    const uploadTaks = firebase.storage
+    const uploadTask = firebase.storage
     .ref(`images/${currentUid}/${imagem.name}`)
     .put(imagem);
 
-    await uploadTaks.on('state_changed', 
+    await uploadTask.on('state_changed', 
     (snapshot)=>{
       //progress
       const progress = Math.round(
@@ -90,8 +90,9 @@ class New extends Component{
       //error
       console.log('Error imagem: ' + error);
     },
-    ()=>{
-      //sucessO!
+
+    () => {
+      //sucesso!!!
       firebase.storage.ref(`images/${currentUid}`)
       .child(imagem.name).getDownloadURL()
       .then(url => {
@@ -112,7 +113,8 @@ class New extends Component{
 
           <input type="file"
            onChange={this.handleFile} /><br/>
-           {this.state.url !== '' ? 
+           {this.state.url !== '' 
+           ? 
             <img src={this.state.url} width="250" height="150" alt="Capa do post"/>
             :
             <progress value={this.state.progress} max="100" />

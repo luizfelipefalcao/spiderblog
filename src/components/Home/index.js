@@ -6,18 +6,17 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: [],
-      nome: ''
+      posts: []
     };
   }
 
   componentDidMount() {   
-    firebase.app.ref("posts").on("value", (snapshot) => {
+    firebase.app.ref("posts").on("value", (snapshot) => { 
       let state = this.state;
-      state.posts = [];
+      state.posts = []; //comecando com array vazio
 
       snapshot.forEach((childItem) => {
-        state.posts.push({
+        state.posts.push({ //jogando no array 'post' os itens que vieram do database
           key: childItem.key,
           titulo: childItem.val().titulo,
           image: childItem.val().image,
@@ -25,24 +24,15 @@ class Home extends Component {
           autor: childItem.val().autor,
         });
       });
-      state.posts.reverse();
-      this.setState(state);
+      state.posts.reverse(); //metodo para lancar o post do mais recente para o mais antigo
+      this.setState(state); //atualizando a state post
     });
-// console.log('local: '+localStorage.nome);
-//     firebase.getUserName((info) => {
-//       //Se tiver logado pegue o usuario do firebase.
-//       localStorage.nome = info.val().nome;
-//       let state = this.state;
-//       state.nome = localStorage.nome;
-//       this.setState(state);
-// console.log("1 nome: " + this.state.nome);
-//     });
   }
 
   render() {
     return (
       <section id="post">
-        {this.state.posts.map((post) => {
+        {this.state.posts.map((post) => { //mapeia o array post que ja esta preenchido
           return (
             <article key={post.key}>
               <header>
