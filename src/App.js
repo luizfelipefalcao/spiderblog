@@ -38,7 +38,7 @@ class App extends Component{
       </BrowserRouter>
     ) : (
       <div id="loading">
-        <h1>Carregando...</h1>
+        <h1>loading...</h1>
       </div>
     );
   }
