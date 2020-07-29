@@ -1,4 +1,4 @@
-This blog has developed by using create-react-app and awesome tecnologies, such:
+This blog was bootstrapped with Create React App and awesome tecnologies, such:
 
 - ReactJS
 - Firebase
