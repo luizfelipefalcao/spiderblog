@@ -1,4 +1,4 @@
-## This blog was bootstrapped with Create React App and uses awesome tecnologies, such:
+This blog was bootstrapped with Create React App and uses awesome tecnologies, such:
 
 - ReactJS
 - Firebase
