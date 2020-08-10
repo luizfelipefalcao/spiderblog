@@ -49,7 +49,6 @@ class Login extends Component {
       alert(error.message);
     }
     
-    this.props.history.push("/");
     window.location.reload();
     
   };
