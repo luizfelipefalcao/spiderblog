@@ -51,7 +51,6 @@ class Login extends Component {
     }
     
     window.location.reload();
-    // this.props.history.replace('/');
 
   };
 
