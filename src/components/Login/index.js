@@ -48,8 +48,10 @@ class Login extends Component {
     } catch (error) {
       alert(error.message);
     }
+    
     this.props.history.push("/");
     window.location.reload();
+    
   };
 
   render() {
