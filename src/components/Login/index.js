@@ -49,7 +49,7 @@ class Login extends Component {
       alert(error.message);
     }
 
-    window.location.reload();
+    window.location.reload('/');
   };
 
   render() {
