@@ -29,6 +29,9 @@ class Login extends Component {
     e.preventDefault();
    
     this.login();
+
+    // window.location.reload();
+    // this.props.history.push("/");
   }
 
   login = async () => {
@@ -49,8 +52,9 @@ class Login extends Component {
       alert(error.message);
     }
     
-    window.location.reload();
-    
+    window.location.reload('/');
+    // this.props.history.replace('/');
+
   };
 
   render() {
