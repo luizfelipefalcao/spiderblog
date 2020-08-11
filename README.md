@@ -1,12 +1,39 @@
-This blog was bootstrapped with Create React App and uses awesome tecnologies, such:
 
-- ReactJS
-- Firebase
 
-The purpose is to test new technologies like Firebase, which has an incredible real-time database, storage and authentication service. I really liked this application because I learned a lot of tools.
+This project was bootstrapped with Create React App.
 
 Live Demo for App is at https://spiderblog.netlify.app
 
-Setup:
+## What is inside?
 
-- run npm install or yarn install to install, and then npm start or yarn start to run the project.
+This project uses lot of stuff as:
+
+- ReactJs
+- Firebase
+- Styled-Components
+- React-Icons
+
+
+## Getting Started
+
+```bash
+npm install
+# or
+yarn install
+to install the application
+
+and 
+
+npm run start
+# or
+yarn start
+to run the application
+
+```
+
+Open [http://localhost:3003](http://localhost:3003) with your browser to see the result.
+
+## Commands
+
+- `start`: starts the application on `localhost:3003`
+
