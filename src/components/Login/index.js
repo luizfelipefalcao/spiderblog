@@ -29,6 +29,9 @@ class Login extends Component {
     e.preventDefault();
    
     this.login();
+    
+    return this.props.history.push("/");
+
 
   }
 
@@ -51,6 +54,7 @@ class Login extends Component {
     }
     
     window.location.reload();
+
 
   };
 
