@@ -10,7 +10,7 @@ This project uses lot of stuff as:
 
 - ReactJs
 - Firebase
-- Styled-Components
+- CSS
 - React-Icons
 
 
